@@ -5,13 +5,13 @@ import pytest
 from archive_resourse import archive_files_from_dir
 
 root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
-archive_path = os.path.abspath(os.path.join(root_path, 'files.zip'))
-resourse_path = os.path.abspath(os.path.join(root_path, 'resourse'))
+files_path = os.path.join(root_path, 'resourse', 'files')
+archive_path = os.path.join(root_path, 'resourse', 'files.zip')
 
 
 @pytest.fixture()
 def run_func():
-    archive_files_from_dir(resourse_path, archive_path)
+    archive_files_from_dir(files_path, archive_path)
 
 
 @pytest.fixture()
